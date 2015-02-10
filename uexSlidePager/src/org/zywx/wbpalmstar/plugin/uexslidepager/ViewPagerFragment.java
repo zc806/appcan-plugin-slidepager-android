@@ -1,6 +1,6 @@
 package org.zywx.wbpalmstar.plugin.uexslidepager;
 
-import org.zywx.wbpalmstar.base.BHtmlDecrypt;
+import org.zywx.wbpalmstar.acedes.ACEDes;
 import org.zywx.wbpalmstar.engine.universalex.EUExUtil;
 import org.zywx.wbpalmstar.plugin.uexslidepager.EUExSlidePager.OnStateChangeListener;
 
@@ -67,7 +67,7 @@ public class ViewPagerFragment extends BaseFragment
         ws.setDefaultTextEncodingName("UTF-8");
         if(mIsEncrypt){
             try {
-                String data = BHtmlDecrypt.decrypt(url, this.getActivity(), false, null);
+                String data = ACEDes.decrypt(url, this.getActivity(), false, null);
                 mConWV.loadDataWithBaseURL(url, data, "text/html", "utf-8", url);
             } catch (Exception e) {
                 e.printStackTrace();
